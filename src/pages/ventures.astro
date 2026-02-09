@@ -1,0 +1,137 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const ventures = [
+    {
+        id: 1,
+        title: "Southern IOT",
+        role: "Co-Founder & CTO",
+        period: "2018 - Present",
+        description:
+            "A leading IoT solutions provider in the southern region, specializing in industrial automation and smart city infrastructure.",
+        highlights: [
+            "Deployed smart water management systems in 3 major cities.",
+            "Partnered with local government for traffic monitoring solutions.",
+            "Grew team from 2 to 15 engineers.",
+        ],
+        link: "#", // Replace with actual link if available
+        logo: "🏢", // Placeholder icon
+    },
+    {
+        id: 2,
+        title: "RBLabs.ai",
+        role: "Founding Engineer",
+        period: "2020 - 2022",
+        description:
+            "AI research lab focused on computer vision applications in agriculture and healthcare.",
+        highlights: [
+            "Developed proprietary crop disease detection algorithms.",
+            "Secured seed funding of $50k.",
+            "Published 2 research papers in top-tier conferences.",
+        ],
+        link: "#", // Replace with actual link if available
+        logo: "🤖", // Placeholder icon
+    },
+];
+---
+
+<Layout title="Ventures - Sama-E-Shan Shoummo">
+    <div class="p-8 md:p-16 lg:p-24">
+        <header class="mb-16">
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]"
+            >
+                <span class="text-[var(--accent)]">{">"}</span> Entrepreneurial Ventures
+            </h1>
+            <p
+                class="text-xl text-[var(--text-muted)] max-w-3xl leading-relaxed"
+            >
+                Building sustainable technology businesses and solving
+                real-world problems through innovation and leadership.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl">
+            {
+                ventures.map((venture) => (
+                    <div class="group relative bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-xl p-8 hover:border-[var(--accent)] transition-all duration-300 hover:shadow-lg hover:shadow-[var(--accent)]/10">
+                        <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-6xl select-none">
+                            {venture.logo}
+                        </div>
+
+                        <div class="flex flex-col h-full relative z-10">
+                            <div class="mb-6">
+                                <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors">
+                                    {venture.title}
+                                </h2>
+                                <div class="flex items-center gap-3 text-sm font-mono text-[var(--text-muted)]">
+                                    <span class="text-[var(--text-secondary)]">
+                                        {venture.role}
+                                    </span>
+                                    <span>•</span>
+                                    <span>{venture.period}</span>
+                                </div>
+                            </div>
+
+                            <p class="text-[var(--text-muted)] mb-6 leading-relaxed">
+                                {venture.description}
+                            </p>
+
+                            <div class="flex-grow">
+                                <h3 class="text-sm font-bold text-[var(--text-primary)] mb-3 uppercase tracking-wider">
+                                    Key Highlights
+                                </h3>
+                                <ul class="space-y-2 mb-8">
+                                    {venture.highlights.map((highlight) => (
+                                        <li class="flex items-start text-sm text-[var(--text-muted)]">
+                                            <span class="text-[var(--accent)] mr-2 mt-1">
+                                                ▸
+                                            </span>
+                                            <span>{highlight}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div class="pt-6 border-t border-[var(--border-color)] mt-auto">
+                                <a
+                                    href={venture.link}
+                                    class="inline-flex items-center text-[var(--accent)] font-mono text-sm font-bold hover:gap-2 transition-all w-fit"
+                                >
+                                    Learn More <span class="ml-2">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <section
+            class="mt-24 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-xl p-8 max-w-4xl"
+        >
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="text-4xl">💡</div>
+                <div>
+                    <h2
+                        class="text-2xl font-bold mb-3 text-[var(--text-primary)]"
+                    >
+                        Looking for a Technical Co-Founder?
+                    </h2>
+                    <p class="text-[var(--text-muted)] mb-4 leading-relaxed">
+                        I'm always open to discussing new business ideas and
+                        technical partnerships. If you have a vision that
+                        requires scalable architecture and engineering
+                        leadership, let's talk.
+                    </p>
+                    <a
+                        href="mailto:sama.shoummmo@gmail.com"
+                        class="inline-block bg-[var(--accent)] text-[var(--bg-primary)] px-6 py-3 rounded font-mono font-bold hover:opacity-90 transition-opacity"
+                    >
+                        Pitch Your Idea →
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

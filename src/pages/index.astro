@@ -1,17 +1,1428 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Sama-E-Shan Shoummo - Portfolio">
+	<div class="p-8 md:p-16 lg:p-24">
+		<!-- About Section -->
+		<section id="about" class="mb-24 scroll-mt-24">
+			<h1
+				class="text-4xl md:text-6xl font-bold mb-4 text-[var(--text-primary)]"
+			>
+				Sama-E-Shan <span class="text-[var(--accent)]">Shoummo</span>
+			</h1>
+			<div class="text-sm text-[var(--text-muted)] mb-6 font-mono">
+				+8801738833277 | <a
+					href="mailto:sama.shoummmo@gmail.com"
+					class="text-[var(--accent)] hover:underline"
+					>sama.shoummmo@gmail.com</a
+				>
+			</div>
+			<p
+				class="text-base text-[var(--text-muted)] max-w-3xl leading-relaxed mb-6"
+			>
+				I am a Mechanical Engineering graduate with hands on experience
+				in design and project management. Currently working solely on
+				Robotics. Worked with different embedded platforms and robotics
+				& automation system-based projects. I am skilled in a wide range
+				of software and platforms. In my spare time I like to do
+				different experimentation with art and interactive media.
+			</p>
+			<a
+				href="https://drive.google.com/file/d/1jb-dm9LIckAWA3IY9VwvPimdaXVJybwd/view?usp=sharing"
+				target="_blank"
+				class="inline-block bg-[var(--accent)] text-[var(--bg-primary)] px-6 py-3 rounded font-mono font-bold hover:opacity-90 transition-opacity"
+			>
+				Download CV
+			</a>
+		</section>
+
+		<!-- Experience Section -->
+		<section id="experience" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Experience
+			</h2>
+			<div class="space-y-8 max-w-4xl">
+				<!-- Experience 1 -->
+				<div class="border-l-2 border-[var(--accent)] pl-6">
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								Assistant Manager
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-3">
+								Southern IOT
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Leading a team of four engineers to
+										develop an ERP system for the garments
+										industry. Responsible for creating CI/CD
+										pipelines and overseeing deployment.</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Establishing a Robotics Division to
+										design and prototype industrial-standard
+										robots using ROS, including an
+										Autonomous Mobile Robot (AMR) and a
+										6-axis robotic arm.</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>November 2025 - Present</span
+						>
+					</div>
+				</div>
+
+				<!-- Experience 2 -->
+				<div
+					class="border-l-2 border-[var(--border-color)] pl-6 hover:border-[var(--accent)] transition-colors"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								ROS Integration Engineer
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-3">
+								RBLabs.ai
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Contributing to the development of a
+										functional humanoid robot with
+										zero-gravity training, walking motion,
+										and human-interaction capabilities.</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Responsible for ensuring seamless ROS
+										integration, implementing various
+										robotic functions, and deploying
+										reinforcement learning models on the
+										robot.</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>November 2025 - Present</span
+						>
+					</div>
+				</div>
+
+				<!-- Experience 3 -->
+				<div
+					class="border-l-2 border-[var(--border-color)] pl-6 hover:border-[var(--accent)] transition-colors"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								Senior Design Engineer
+							</h3>
+							<p
+								class="text-[var(--text-secondary)] mb-1 text-sm"
+							>
+								(Head of Design Work Preparation Dept.)
+							</p>
+							<p class="text-[var(--text-secondary)] mb-3">
+								Swiss Biohygienic Equipment
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Leading a team of 4 Engineers to
+										complete complex design and R&D based
+										tasks</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Process Piping Design (2D Routing,
+										P&ID, 3D Routing, Isometric Drawing) in
+										AutoCAD Plant 3D</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>PW/WFI/CS Distribution System Design
+										for Pharmaceuticals according to ASME
+										BPE</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>September 2021 - September 2022</span
+						>
+					</div>
+				</div>
+
+				<!-- Experience 4 -->
+				<div
+					class="border-l-2 border-[var(--border-color)] pl-6 hover:border-[var(--accent)] transition-colors"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								Research Assistant
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-3">
+								Haptics and Virtual Reality Lab
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>SafetyProject: Project goal is to
+										incorporate multimodes of haptic
+										feedback by different wearable devices
+										to be used in safety training simulation
+										scenarios. My primary responsibility was
+										to design 3d printed devices, design pcb
+										as well as create virtual reality-based
+										scenarios.</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Project goal is to replicate the
+										different haptic feedback in virtual
+										scene for a Power plant. My
+										responsibility was to replicate the
+										virtual scenario from point cloud camera
+										data. Cleaning and optimizing for VR
+										(Unity). Later on create a data
+										acquisition system to collect Force,
+										acceleration and position data using a
+										UR3 robot.</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>September 2022 - September 2024</span
+						>
+					</div>
+				</div>
+
+				<!-- Experience 5 -->
+				<div
+					class="border-l-2 border-[var(--border-color)] pl-6 hover:border-[var(--accent)] transition-colors"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								Assistant Engineer
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-3">
+								Max Infrastructure
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Design p&id diagrams, flow diagram for
+										Water Treatment Plant. Extensive work on
+										structural design of pressure vessels,
+										storage tanks, piping etc.</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Cost analysis, preparing bill of
+										materials, scope of work and technical
+										specification for government and private
+										projects.</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>May 2019 - August 2021</span
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Education Section -->
+		<section id="education" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Education
+			</h2>
+			<div class="space-y-6 max-w-4xl">
+				<div
+					class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								MSc in Computer Science
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-2">
+								Kyung Hee University, Korea
+							</p>
+							<p class="text-sm text-[var(--text-muted)]">
+								CGPA: 4.263 (99.50%)
+							</p>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0"
+							>2022-2024</span
+						>
+					</div>
+				</div>
+
+				<div
+					class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								BSc in Mechanical Engineering
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-2">
+								Chittagong University of Engineering and
+								Technology
+							</p>
+							<p class="text-sm text-[var(--text-muted)]">
+								CGPA: 2.98 (63.60%)
+							</p>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0"
+							>2014-2019</span
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Skills Section -->
+		<section id="skills" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Skills
+			</h2>
+			<div class="space-y-6 max-w-4xl">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div
+						class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+					>
+						<h4
+							class="text-sm font-bold text-[var(--accent)] mb-2 font-mono"
+						>
+							Programming Languages
+						</h4>
+						<p class="text-sm text-[var(--text-muted)]">
+							Python, Javascript, C, PHP
+						</p>
+					</div>
+					<div
+						class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+					>
+						<h4
+							class="text-sm font-bold text-[var(--accent)] mb-2 font-mono"
+						>
+							Embedded Platforms
+						</h4>
+						<p class="text-sm text-[var(--text-muted)]">
+							Arduino, PIC & Atmel microcontrollers, RaspberryPi
+						</p>
+					</div>
+					<div
+						class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+					>
+						<h4
+							class="text-sm font-bold text-[var(--accent)] mb-2 font-mono"
+						>
+							CAD Software
+						</h4>
+						<p class="text-sm text-[var(--text-muted)]">
+							Solidworks, AutoCAD, Autodesk Plant, Autodesk Fusion
+							360
+						</p>
+					</div>
+					<div
+						class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+					>
+						<h4
+							class="text-sm font-bold text-[var(--accent)] mb-2 font-mono"
+						>
+							Design Software
+						</h4>
+						<p class="text-sm text-[var(--text-muted)]">
+							Blender, Inkscape, Gimp, Krita, Sketchbook Pro,
+							Photoshop
+						</p>
+					</div>
+					<div
+						class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+					>
+						<h4
+							class="text-sm font-bold text-[var(--accent)] mb-2 font-mono"
+						>
+							Game Development
+						</h4>
+						<p class="text-sm text-[var(--text-muted)]">Unity</p>
+					</div>
+					<div
+						class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+					>
+						<h4
+							class="text-sm font-bold text-[var(--accent)] mb-2 font-mono"
+						>
+							Robotics
+						</h4>
+						<p class="text-sm text-[var(--text-muted)]">
+							RoboDK, ROS
+						</p>
+					</div>
+				</div>
+
+				<div
+					class="space-y-4 text-sm text-[var(--text-muted)] leading-relaxed"
+				>
+					<p>
+						<span class="text-[var(--accent)] mr-2">▸</span>
+						Expert CAD design. Experience is mainly focused in process
+						plant design, piping and fitting system design and different
+						fluid simulation related to water and gas distribution lines.
+						Also have experience as freelancer on different product design
+						based projects. Check the <a
+							href="https://grabcad.com/sama.e.shan-1/models"
+							target="_blank"
+							class="text-[var(--accent)] hover:underline"
+							>GrabCAD</a
+						> account to check out some of my works.
+					</p>
+					<p>
+						<span class="text-[var(--accent)] mr-2">▸</span>
+						Worked with web development framework such as Django, Flask
+						and Node Js. Have good experience working with sql and nosql
+						databases. Have good knowledge of react and different frontend
+						libraries.
+					</p>
+					<p>
+						<span class="text-[var(--accent)] mr-2">▸</span>
+						Have good understanding of image processing and have done
+						extensive work with libraries such as opencv. Also have experience
+						working with different transfer learning based projects with
+						tensorflow, keras, scikit-learn.
+					</p>
+					<p>
+						<span class="text-[var(--accent)] mr-2">▸</span>
+						Love to work with creative coding frameworks such as processing
+						and p5.js. Enjoy working anything that is related to media
+						interaction.
+					</p>
+					<p>
+						<span class="text-[var(--accent)] mr-2">▸</span>
+						Worked with different embedded system platforms (mentioned
+						above) to create different projects based on robotics, IoT
+						and biomedical engineering.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Projects Section -->
+		<section id="projects" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Projects
+			</h2>
+
+			<!-- Tag Filter -->
+			<div class="mb-8">
+				<p class="text-sm text-[var(--text-muted)] mb-4 font-mono">
+					Filter by technology:
+				</p>
+				<div class="flex flex-wrap gap-2">
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border text-xs font-mono transition-all hover:border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-primary)] border-[var(--accent)]"
+						data-tag="all"
+					>
+						All Projects
+					</button>
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border border-[var(--border-color)] text-xs font-mono transition-all hover:border-[var(--accent)] text-[var(--text-secondary)]"
+						data-tag="ROS"
+					>
+						ROS
+					</button>
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border border-[var(--border-color)] text-xs font-mono transition-all hover:border-[var(--accent)] text-[var(--text-secondary)]"
+						data-tag="TypeScript"
+					>
+						TypeScript
+					</button>
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border border-[var(--border-color)] text-xs font-mono transition-all hover:border-[var(--accent)] text-[var(--text-secondary)]"
+						data-tag="CI/CD"
+					>
+						CI/CD
+					</button>
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border border-[var(--border-color)] text-xs font-mono transition-all hover:border-[var(--accent)] text-[var(--text-secondary)]"
+						data-tag="Python"
+					>
+						Python
+					</button>
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border border-[var(--border-color)] text-xs font-mono transition-all hover:border-[var(--accent)] text-[var(--text-secondary)]"
+						data-tag="Robotics"
+					>
+						Robotics
+					</button>
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border border-[var(--border-color)] text-xs font-mono transition-all hover:border-[var(--accent)] text-[var(--text-secondary)]"
+						data-tag="Computer Vision"
+					>
+						Computer Vision
+					</button>
+					<button
+						class="project-filter-tag px-3 py-1.5 rounded border border-[var(--border-color)] text-xs font-mono transition-all hover:border-[var(--accent)] text-[var(--text-secondary)]"
+						data-tag="IoT"
+					>
+						IoT
+					</button>
+				</div>
+			</div>
+
+			<!-- Projects Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mb-6">
+				<!-- Project 1 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="ROS,Python,Robotics"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						Humanoid Robot Development
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						Contributing to the development of a functional humanoid
+						robot with zero-gravity training, walking motion, and
+						human-interaction capabilities using ROS.
+					</p>
+					<div class="aspect-video mb-4">
+						<iframe
+							width="100%"
+							height="100%"
+							src="https://www.youtube.com/embed/UInGflqAGg0"
+							frameborder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+							class="rounded"></iframe>
+					</div>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>ROS</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Python</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Robotics</span
+						>
+					</div>
+					<a
+						href="https://github.com/samaeen"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View Project →
+					</a>
+				</div>
+
+				<!-- Project 2 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="TypeScript,CI/CD,Python"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						ERP System for Garments Industry
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						Leading development of a comprehensive ERP system with
+						CI/CD pipelines, automated deployment, and full-stack
+						implementation.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>TypeScript</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>CI/CD</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Python</span
+						>
+					</div>
+					<a
+						href="https://github.com/samaeen"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View Project →
+					</a>
+				</div>
+
+				<!-- Project 3 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="ROS,Python,Robotics"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						Autonomous Mobile Robot (AMR)
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						Designing and prototyping industrial-standard AMR using
+						ROS for warehouse automation and navigation.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>ROS</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Python</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Robotics</span
+						>
+					</div>
+					<a
+						href="https://github.com/samaeen"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View Project →
+					</a>
+				</div>
+
+				<!-- Project 4 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="ROS,Robotics"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						6-Axis Robotic Arm
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						Industrial robotic arm with ROS integration for
+						manufacturing applications and precision control.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>ROS</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Robotics</span
+						>
+					</div>
+					<a
+						href="https://github.com/samaeen"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View Project →
+					</a>
+				</div>
+
+				<!-- Project 5 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="IoT"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						EMG Driven Exo-skeleton Hand
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						Design and Fabrication of EMG Driven Exo-skeleton hand
+						for rehabilitation and work assistance.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>IoT</span
+						>
+					</div>
+					<a
+						href="https://www.slideshare.net/SamaEShan/design-and-fabrication-of-emg-driven-exoskeleton-hand-for-rehabilitation-process-and-work-assistance"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View Presentation →
+					</a>
+				</div>
+
+				<!-- Project 6 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="Python,Computer Vision,IoT"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						IoT Driver Safety Monitoring
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						IoT and Computer Vision Based Driver Safety Monitoring
+						System with Risk Prediction using machine learning.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Python</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Computer Vision</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>IoT</span
+						>
+					</div>
+					<a
+						href="https://www.slideshare.net/SamaEShan/iot-and-computer-vision-based-driver-safety-monitoring-system-with-risk-prediction"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View Presentation →
+					</a>
+				</div>
+
+				<!-- Project 7 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="Python,Computer Vision"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						Brain Image Segmentation
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						Medical image processing for brain tumor segmentation
+						using deep learning and computer vision techniques.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Python</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Computer Vision</span
+						>
+					</div>
+					<a
+						href="https://github.com/samaeen/Brain-Image-Segementation"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View on GitHub →
+					</a>
+				</div>
+
+				<!-- Project 8 -->
+				<div
+					class="project-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+					data-tags="Python,Computer Vision"
+				>
+					<h3
+						class="text-xl font-bold text-[var(--text-primary)] mb-3"
+					>
+						OpenCV Practice Projects
+					</h3>
+					<p
+						class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed"
+					>
+						A collection of basic computer vision projects using
+						Python and OpenCV for learning and experimentation.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Python</span
+						>
+						<span
+							class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]"
+							>Computer Vision</span
+						>
+					</div>
+					<a
+						href="https://github.com/samaeen/opencv_practice"
+						target="_blank"
+						class="text-[var(--accent)] hover:underline text-sm font-mono"
+					>
+						View on GitHub →
+					</a>
+				</div>
+			</div>
+
+			<!-- No Results Message -->
+			<div id="no-projects-results" class="hidden text-center py-12">
+				<p class="text-[var(--text-muted)] font-mono">
+					No projects found with the selected tag.
+				</p>
+			</div>
+		</section>
+
+		<script>
+			const projectFilterTags = document.querySelectorAll(
+				".project-filter-tag",
+			);
+			const projectItems = document.querySelectorAll(".project-item");
+			const noProjectsResults = document.getElementById(
+				"no-projects-results",
+			);
+
+			projectFilterTags.forEach((tag) => {
+				tag.addEventListener("click", () => {
+					const selectedTag = tag.getAttribute("data-tag") || "all";
+
+					// Update active state
+					projectFilterTags.forEach((t) => {
+						t.classList.remove(
+							"bg-[var(--accent)]",
+							"text-[var(--bg-primary)]",
+							"border-[var(--accent)]",
+						);
+						t.classList.add(
+							"text-[var(--text-secondary)]",
+							"border-[var(--border-color)]",
+						);
+					});
+					tag.classList.add(
+						"bg-[var(--accent)]",
+						"text-[var(--bg-primary)]",
+						"border-[var(--accent)]",
+					);
+					tag.classList.remove(
+						"text-[var(--text-secondary)]",
+						"border-[var(--border-color)]",
+					);
+
+					let visibleCount = 0;
+
+					// Filter projects
+					projectItems.forEach((item) => {
+						const itemTags = (
+							item.getAttribute("data-tags") || ""
+						).split(",");
+
+						if (
+							selectedTag === "all" ||
+							itemTags.includes(selectedTag)
+						) {
+							(item as HTMLElement).style.display = "block";
+							visibleCount++;
+						} else {
+							(item as HTMLElement).style.display = "none";
+						}
+					});
+
+					// Show/hide no results message
+					if (visibleCount === 0) {
+						noProjectsResults?.classList.remove("hidden");
+					} else {
+						noProjectsResults?.classList.add("hidden");
+					}
+				});
+			});
+		</script>
+
+		<!-- Training Section -->
+		<section id="training" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Training
+			</h2>
+			<ul class="space-y-3 max-w-4xl text-sm text-[var(--text-muted)]">
+				<li class="flex items-start">
+					<span class="text-[var(--accent)] mr-3">▸</span>
+					<span>Web app development Course by BITM</span>
+				</li>
+				<li class="flex items-start">
+					<span class="text-[var(--accent)] mr-3">▸</span>
+					<span
+						>Training on "Industrial Water Treatment and Boiler &
+						Cooling Water Conditioning" by Bangladesh-Japan Training
+						Institute</span
+					>
+				</li>
+				<li class="flex items-start">
+					<span class="text-[var(--accent)] mr-3">▸</span>
+					<span>Basic PLC training by IET department, CUET</span>
+				</li>
+				<li class="flex items-start">
+					<span class="text-[var(--accent)] mr-3">▸</span>
+					<span>3 Weeks Internship in BSRM, Fouzdarhat</span>
+				</li>
+				<li class="flex items-start">
+					<span class="text-[var(--accent)] mr-3">▸</span>
+					<span
+						>Industrial tour in KSRM, Confidence Cement, Aftab
+						Automobiles, BITAC</span
+					>
+				</li>
+				<li class="flex items-start">
+					<span class="text-[var(--accent)] mr-3">▸</span>
+					<span
+						>Leadership Training by Youth School for Social
+						Entrepreneurs</span
+					>
+				</li>
+			</ul>
+		</section>
+
+		<!-- Awards Section -->
+		<section id="awards" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Awards & Certifications
+			</h2>
+			<div class="space-y-8 max-w-4xl">
+				<div>
+					<h3
+						class="text-lg font-bold text-[var(--text-secondary)] mb-4"
+					>
+						University
+					</h3>
+					<ul class="space-y-3 text-sm text-[var(--text-muted)]">
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span
+								>Selected as top 5 Projects in Innovation to
+								Industry in ICT expo2017</span
+							>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span>5th position in RMA Rush 2015</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span>Participated in IARC country round 2016</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span>4th position in Stellar Hackathon 2017</span>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3
+						class="text-lg font-bold text-[var(--text-secondary)] mb-4"
+					>
+						School
+					</h3>
+					<ul class="space-y-3 text-sm text-[var(--text-muted)]">
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span
+								>Champion in Math Olympiad (divisional) in 2004,
+								2005, 2006 and second-runner up in 2006 (Country
+								Round)</span
+							>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span
+								>1st position in Astro-Olympiad (divisional) in
+								2009, 2010 and 19th in 2010 (Country Round)</span
+							>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span
+								>Champion of Divisional Debate arranged by
+								Transparency International Bangladesh and
+								selected as the debater of the tournament</span
+							>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span
+								>Awarded 5th position in Divisional Scholarship
+								Exams 2008</span
+							>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[var(--accent)] mr-3">🏆</span>
+							<span
+								>Won prizes in divisional science fair in 2004
+								and 2007</span
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Research Section -->
+		<section id="research" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Conference Papers
+			</h2>
+			<ul class="space-y-4 max-w-4xl text-sm">
+				<li
+					class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+				>
+					<a
+						href="https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11488400"
+						target="_blank"
+						class="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
+					>
+						Pneumatic Ear Shield for Haptic Mental Repose.
+						한국정보과학회 학술발표논문집, 1436-1438, 2023.
+					</a>
+				</li>
+				<li
+					class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+				>
+					<a
+						href="https://ieeexplore.ieee.org/abstract/document/8465617"
+						target="_blank"
+						class="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
+					>
+						IoT and Computer Vision Based Driver Safety Monitoring
+						system with risk prediction, International Conference on
+						Computer, Communication, Chemical, Materials and
+						Electronic Engineering (IC4ME2), 2018.
+					</a>
+				</li>
+				<li
+					class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+				>
+					<a
+						href="https://ieeexplore.ieee.org/abstract/document/9392401"
+						target="_blank"
+						class="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
+					>
+						An Efficient Way to Recognize Faces Using Mean
+						Embeddings, 2021 International Conference on Advances in
+						Electrical, Computing, Communication and Sustainable
+						Technologies (ICAECT), 2021
+					</a>
+				</li>
+				<li
+					class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-4 hover:border-[var(--accent)] transition-all"
+				>
+					<a
+						href="https://www.cuet.ac.bd/icmere/archive.php"
+						target="_blank"
+						class="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
+					>
+						An Approach to Maximize the Integrated Safety System for
+						Two wheelers, Proceedings of the International
+						Conference on Mechanical Engineering and Renewable
+						Energy 2019 (ICMERE2019)
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<!-- Co-curricular Section -->
+		<section id="co-curricular" class="mb-24 scroll-mt-24">
+			<h2 class="text-3xl font-bold mb-8 text-[var(--text-primary)]">
+				<span class="text-[var(--accent)]">{">"}</span> Co-Curricular Activities
+			</h2>
+			<div class="space-y-8 max-w-4xl">
+				<div class="border-l-2 border-[var(--accent)] pl-6">
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								Technical Secretary
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-3">
+								Robo Mechatronics Association, Bangladesh
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Arranged 3 national competition on
+										robotics</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Was responsible for documenting,
+										assigning and completing different
+										technical projects</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Trained more than 50 members on
+										Robotics, Embedded platforms and CAD
+										software</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>2015-2018</span
+						>
+					</div>
+				</div>
+
+				<div
+					class="border-l-2 border-[var(--border-color)] pl-6 hover:border-[var(--accent)] transition-colors"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								Branch Director
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-3">
+								Research Co-ordinating Committee at IEEE student
+								Branch, CUET
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Organized different seminars for
+										research and different organizational
+										activities</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>2017-2018</span
+						>
+					</div>
+				</div>
+
+				<div
+					class="border-l-2 border-[var(--border-color)] pl-6 hover:border-[var(--accent)] transition-colors"
+				>
+					<div
+						class="flex flex-col md:flex-row md:items-start md:justify-between mb-2"
+					>
+						<div class="flex-1">
+							<h3
+								class="text-xl font-bold text-[var(--text-primary)]"
+							>
+								Feature Writer
+							</h3>
+							<p class="text-[var(--text-secondary)] mb-3">
+								roar.media
+							</p>
+							<ul
+								class="space-y-2 text-[var(--text-muted)] text-sm"
+							>
+								<li class="flex items-start">
+									<span class="text-[var(--accent)] mr-2"
+										>▸</span
+									>
+									<span
+										>Wrote and edited science based articles</span
+									>
+								</li>
+							</ul>
+						</div>
+						<span
+							class="text-sm text-[var(--text-muted)] font-mono mt-2 md:mt-0 md:ml-4"
+							>2019</span
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Art Section -->
+		<section id="art" class="mb-24 scroll-mt-24">
+			<div
+				class="flex flex-col md:flex-row justify-between items-end mb-8"
+			>
+				<div>
+					<h2
+						class="text-3xl font-bold mb-4 text-[var(--text-primary)]"
+					>
+						<span class="text-[var(--accent)]">{">"}</span> Art Collection
+					</h2>
+					<p class="text-[var(--text-muted)] max-w-xl">
+						A curated selection of my artwork. For the latest pieces
+						and behind-the-scenes, follow me on Instagram.
+					</p>
+				</div>
+				<a
+					href="https://www.instagram.com/samaeen_art/"
+					target="_blank"
+					class="hidden md:inline-flex items-center gap-2 text-[var(--accent)] hover:gap-3 transition-all font-mono text-sm font-bold border border-[var(--accent)] px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--bg-primary)]"
+				>
+					<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+						><path
+							d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+						></path></svg
+					>
+					Follow @samaeen_art →
+				</a>
+			</div>
+
+			<div
+				class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl"
+			>
+				<iframe
+					src="https://www.instagram.com/p/CEPJOU_Fr1O/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+				<iframe
+					src="https://www.instagram.com/p/CEUp16Tl7uZ/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+				<iframe
+					src="https://www.instagram.com/p/CErjed1HudO/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+				<iframe
+					src="https://www.instagram.com/p/CFQ01LLnLsa/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+				<iframe
+					src="https://www.instagram.com/p/CEcaAeAFOcQ/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+				<iframe
+					src="https://www.instagram.com/p/CEmq7v6H_G_/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+				<iframe
+					src="https://www.instagram.com/p/CFJCq37npYK/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+				<iframe
+					src="https://www.instagram.com/p/CE0fkMvHD_l/embed"
+					width="100%"
+					height="400"
+					frameborder="0"
+					scrolling="no"
+					allowtransparency="true"
+					class="rounded grayscale hover:grayscale-0 transition-all duration-500"
+				></iframe>
+			</div>
+
+			<div class="md:hidden mt-8 text-center">
+				<a
+					href="https://www.instagram.com/samaeen_art/"
+					target="_blank"
+					class="inline-flex items-center gap-2 text-[var(--accent)] font-mono text-sm font-bold border border-[var(--accent)] px-6 py-3 rounded hover:bg-[var(--accent)] hover:text-[var(--bg-primary)] transition-all"
+				>
+					<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+						><path
+							d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+						></path></svg
+					>
+					View All on Instagram →
+				</a>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="mb-24">
+			<div
+				class="bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-8 max-w-2xl"
+			>
+				<h2 class="text-2xl font-bold mb-4 text-[var(--text-primary)]">
+					<span class="text-[var(--accent)]">{">"}</span> Let's Connect
+				</h2>
+				<p class="text-[var(--text-muted)] mb-6 leading-relaxed">
+					I'm always interested in hearing about new projects and
+					opportunities. Feel free to reach out if you'd like to
+					collaborate!
+				</p>
+				<a
+					href="mailto:sama.shoummmo@gmail.com"
+					class="inline-block bg-[var(--accent)] text-[var(--bg-primary)] px-6 py-3 rounded font-mono font-bold hover:opacity-90 transition-opacity"
+				>
+					Get in Touch →
+				</a>
+			</div>
+		</section>
+	</div>
+</Layout>
+
+<style>
+	/* Smooth scroll behavior */
+	html {
+		scroll-behavior: smooth;
+	}
+</style>

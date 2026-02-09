@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Systems Architect | Full Stack Developer" } =
+  Astro.props;
+import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
+import MatrixBackground from "../components/MatrixBackground.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href={`${import.meta.env.BASE_URL}logo.jpg`}
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen">
+    <MatrixBackground />
+    <Sidebar />
+    <ThemeToggle />
+
+    <main class="content-overlay lg:ml-64 min-h-screen">
+      <slot />
+    </main>
+
+    <script>
+      // Initialize theme on page load
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </body>
+</html>

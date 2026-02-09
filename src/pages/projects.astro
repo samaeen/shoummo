@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Dummy projects data with tags
+const projects = [
+    {
+        id: 1,
+        title: "Humanoid Robot Development",
+        description:
+            "Contributing to the development of a functional humanoid robot with zero-gravity training, walking motion, and human-interaction capabilities using ROS.",
+        tags: ["ROS", "Python", "Robotics", "AI"],
+        link: "https://github.com/samaeen",
+        type: "video",
+        videoUrl: "https://www.youtube.com/embed/UInGflqAGg0",
+    },
+    {
+        id: 2,
+        title: "ERP System for Garments Industry",
+        description:
+            "Leading development of a comprehensive ERP system with CI/CD pipelines and automated deployment.",
+        tags: ["TypeScript", "CI/CD", "Node.js", "React"],
+        link: "https://github.com/samaeen",
+        type: "link",
+    },
+    {
+        id: 3,
+        title: "Autonomous Mobile Robot (AMR)",
+        description:
+            "Designing and prototyping industrial-standard AMR using ROS for warehouse automation.",
+        tags: ["ROS", "Python", "Robotics", "Computer Vision"],
+        link: "https://github.com/samaeen",
+        type: "link",
+    },
+    {
+        id: 4,
+        title: "6-Axis Robotic Arm",
+        description:
+            "Industrial robotic arm with ROS integration for manufacturing applications.",
+        tags: ["ROS", "C++", "Robotics", "Control Systems"],
+        link: "https://github.com/samaeen",
+        type: "link",
+    },
+    {
+        id: 5,
+        title: "EMG Driven Exo-skeleton Hand",
+        description:
+            "Design and Fabrication of EMG Driven Exo-skeleton hand for rehabilitation and work assistance.",
+        tags: ["Arduino", "C", "Biomedical", "3D Printing"],
+        link: "https://www.slideshare.net/SamaEShan/design-and-fabrication-of-emg-driven-exoskeleton-hand-for-rehabilitation-process-and-work-assistance",
+        type: "link",
+    },
+    {
+        id: 6,
+        title: "IoT Driver Safety Monitoring",
+        description:
+            "IoT and Computer Vision Based Driver Safety Monitoring System with Risk Prediction.",
+        tags: ["Python", "Computer Vision", "IoT", "Machine Learning"],
+        link: "https://www.slideshare.net/SamaEShan/iot-and-computer-vision-based-driver-safety-monitoring-system-with-risk-prediction",
+        type: "link",
+    },
+    {
+        id: 7,
+        title: "Brain Image Segmentation",
+        description:
+            "Medical image processing for brain tumor segmentation using deep learning.",
+        tags: ["Python", "Machine Learning", "Computer Vision", "TensorFlow"],
+        link: "https://github.com/samaeen/Brain-Image-Segementation",
+        type: "link",
+    },
+    {
+        id: 8,
+        title: "Web Development Portfolio",
+        description:
+            "Full-stack web applications using Django, Flask, and Node.js with SQL/NoSQL databases.",
+        tags: ["TypeScript", "Node.js", "React", "Python"],
+        link: "https://github.com/samaeen",
+        type: "link",
+    },
+];
+
+// Extract unique tags
+const allTags = [...new Set(projects.flatMap((p) => p.tags))].sort();
+---
+
+<Layout title="Projects - Sama-E-Shan Shoummo">
+    <div class="p-8 md:p-16 lg:p-24">
+        <!-- Header -->
+        <header class="mb-12">
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 text-[var(--text-primary)]"
+            >
+                <span class="text-[var(--accent)]">{">"}</span> Projects
+            </h1>
+            <p class="text-[var(--text-muted)]">
+                A collection of my work in robotics, software development, and
+                research
+            </p>
+        </header>
+
+        <!-- Tag Filter -->
+        <div class="mb-12">
+            <p class="text-sm text-[var(--text-muted)] mb-4 font-mono">
+                Filter by technology:
+            </p>
+            <div class="flex flex-wrap gap-2">
+                <button
+                    class="filter-tag px-4 py-2 rounded border border-[var(--border-color)] text-sm font-mono transition-all hover:border-[var(--accent)] active"
+                    data-tag="all"
+                >
+                    All Projects
+                </button>
+                {
+                    allTags.map((tag) => (
+                        <button
+                            class="filter-tag px-4 py-2 rounded border border-[var(--border-color)] text-sm font-mono transition-all hover:border-[var(--accent)]"
+                            data-tag={tag}
+                        >
+                            {tag}
+                        </button>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
+            {
+                projects.map((project) => (
+                    <article
+                        class="project-card bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg p-6 hover:border-[var(--accent)] transition-all"
+                        data-tags={project.tags.join(",")}
+                    >
+                        <h3 class="text-xl font-bold text-[var(--text-primary)] mb-3">
+                            {project.title}
+                        </h3>
+                        <p class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed">
+                            {project.description}
+                        </p>
+
+                        {project.type === "video" && project.videoUrl && (
+                            <div class="aspect-video mb-4">
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src={project.videoUrl}
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    class="rounded"
+                                />
+                            </div>
+                        )}
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {project.tags.map((tag) => (
+                                <span class="text-xs text-[var(--accent)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded border border-[var(--border-color)]">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+
+                        <a
+                            href={project.link}
+                            target="_blank"
+                            class="text-[var(--accent)] hover:underline text-sm font-mono"
+                        >
+                            View Project →
+                        </a>
+                    </article>
+                ))
+            }
+        </div>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-12">
+            <p class="text-[var(--text-muted)] font-mono">
+                No projects found with the selected tag.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const filterTags = document.querySelectorAll(".filter-tag");
+        const projectCards = document.querySelectorAll(".project-card");
+        const noResults = document.getElementById("no-results");
+
+        filterTags.forEach((tag) => {
+            tag.addEventListener("click", () => {
+                const selectedTag = tag.getAttribute("data-tag");
+
+                // Update active state
+                filterTags.forEach((t) =>
+                    t.classList.remove(
+                        "active",
+                        "bg-[var(--accent)]",
+                        "text-[var(--bg-primary)]",
+                        "border-[var(--accent)]",
+                    ),
+                );
+                tag.classList.add(
+                    "active",
+                    "bg-[var(--accent)]",
+                    "text-[var(--bg-primary)]",
+                    "border-[var(--accent)]",
+                );
+
+                let visibleCount = 0;
+
+                // Filter projects
+                projectCards.forEach((card) => {
+                    const cardTags = (
+                        card.getAttribute("data-tags") || ""
+                    ).split(",");
+
+                    if (
+                        selectedTag === "all" ||
+                        cardTags.includes(selectedTag)
+                    ) {
+                        (card as HTMLElement).style.display = "block";
+                        visibleCount++;
+                    } else {
+                        (card as HTMLElement).style.display = "none";
+                    }
+                });
+
+                // Show/hide no results message
+                if (visibleCount === 0) {
+                    noResults?.classList.remove("hidden");
+                } else {
+                    noResults?.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .filter-tag.active {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            border-color: var(--accent);
+        }
+    </style>
+</Layout>

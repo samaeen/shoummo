@@ -1,0 +1,312 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { getMediumPosts } from "../../utils/medium";
+
+// Fetch Local Posts
+const localPosts = await getCollection("blog");
+const formattedLocalPosts = localPosts.map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    pubDate: post.data.pubDate,
+    tags: post.data.tags || [],
+    image: post.data.image,
+    link: `/blog/${post.slug}`,
+    source: "local",
+    external: false,
+}));
+
+// Fetch Medium Posts
+const mediumPosts = await getMediumPosts("sama-shoummo");
+const formattedMediumPosts = mediumPosts.map((post) => ({
+    title: post.title,
+    description: post.content.replace(/<[^>]*>/g, "").substring(0, 150) + "...",
+    pubDate: new Date(post.pubDate),
+    tags: post.categories || [],
+    image: post.thumbnail,
+    link: post.link,
+    source: "medium",
+    external: true,
+}));
+
+// Combine and Sort
+const allPosts = [...formattedLocalPosts, ...formattedMediumPosts].sort(
+    (a, b) => b.pubDate.valueOf() - a.pubDate.valueOf(),
+);
+
+// Extract Unique Tags
+const allTags = [...new Set(allPosts.flatMap((post) => post.tags))].sort();
+---
+
+<Layout title="Blog - Sama-E-Shan Shoummo">
+    <div class="p-8 md:p-16 lg:p-24">
+        <!-- Header -->
+        <header class="mb-12">
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 text-[var(--text-primary)]"
+            >
+                <span class="text-[var(--accent)]">{">"}</span> Blog
+            </h1>
+            <p class="text-[var(--text-muted)]">
+                Technical articles, insights, and stories
+            </p>
+        </header>
+
+        <!-- Controls Container -->
+        <div class="mb-12 space-y-6">
+            <!-- Search Bar -->
+            <div class="max-w-2xl">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search articles..."
+                    class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded px-4 py-3 text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent)] transition-colors font-mono"
+                />
+            </div>
+
+            <!-- Source Toggle -->
+            <div class="flex gap-4 border-b border-[var(--border-color)] pb-4">
+                <button
+                    class="source-filter-btn px-4 py-2 text-sm font-mono font-bold border-b-2 border-[var(--accent)] text-[var(--accent)]"
+                    data-source="all"
+                >
+                    All Posts
+                </button>
+                <button
+                    class="source-filter-btn px-4 py-2 text-sm font-mono text-[var(--text-muted)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--border-color)] transition-all"
+                    data-source="local"
+                >
+                    Here
+                </button>
+                <button
+                    class="source-filter-btn px-4 py-2 text-sm font-mono text-[var(--text-muted)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--border-color)] transition-all"
+                    data-source="medium"
+                >
+                    Medium
+                </button>
+            </div>
+
+            <!-- Tag Cloud -->
+            <div class="flex flex-wrap gap-2">
+                <button
+                    class="tag-filter-btn px-3 py-1 text-xs font-mono rounded-full border border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-primary)] transition-all"
+                    data-tag="all"
+                >
+                    All Tags
+                </button>
+                {
+                    allTags.map((tag) => (
+                        <button
+                            class="tag-filter-btn px-3 py-1 text-xs font-mono rounded-full border border-[var(--border-color)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all"
+                            data-tag={tag.toLowerCase()}
+                        >
+                            #{tag}
+                        </button>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Blog Posts -->
+        <div id="posts-container" class="space-y-6 max-w-4xl">
+            {
+                allPosts.map((post) => (
+                    <article
+                        class="post-item bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent)] transition-all overflow-hidden flex flex-col md:flex-row"
+                        data-title={post.title.toLowerCase()}
+                        data-description={post.description.toLowerCase()}
+                        data-tags={post.tags.join(" ").toLowerCase()}
+                        data-source={post.source}
+                    >
+                        {post.image && (
+                            <div class="w-full md:w-48 h-48 md:h-auto shrink-0 relative overflow-hidden group">
+                                <img
+                                    src={post.image}
+                                    alt={post.title}
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                            </div>
+                        )}
+
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                                <a
+                                    href={post.link}
+                                    target={post.external ? "_blank" : "_self"}
+                                    class="group flex-1"
+                                >
+                                    <h2 class="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors mb-2 flex items-center gap-2">
+                                        {post.title}
+                                        {post.external && (
+                                            <i class="fas fa-external-link-alt text-xs opacity-50" />
+                                        )}
+                                    </h2>
+                                </a>
+                                <time class="text-xs text-[var(--text-muted)] font-mono md:ml-4 whitespace-nowrap mt-1 md:mt-0">
+                                    {post.pubDate.toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "short",
+                                        day: "numeric",
+                                    })}
+                                </time>
+                            </div>
+
+                            <p class="text-sm text-[var(--text-muted)] mb-4 leading-relaxed line-clamp-2 flex-grow">
+                                {post.description}
+                            </p>
+
+                            <div class="flex items-center justify-between mt-auto pt-4 border-t border-[var(--border-color)]">
+                                {post.tags && (
+                                    <div class="flex flex-wrap gap-2">
+                                        {post.tags.slice(0, 3).map((tag) => (
+                                            <span class="text-xs text-[var(--text-secondary)] font-mono px-2 py-1 bg-[var(--bg-primary)] rounded">
+                                                #{tag}
+                                            </span>
+                                        ))}
+                                        {post.tags.length > 3 && (
+                                            <span class="text-xs text-[var(--text-muted)] font-mono px-1 py-1">
+                                                +{post.tags.length - 3}
+                                            </span>
+                                        )}
+                                    </div>
+                                )}
+                                <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--bg-primary)] border border-[var(--border-color)] uppercase ml-2">
+                                    {post.source}
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+
+        <div id="no-results" class="hidden text-center py-12 max-w-4xl">
+            <p class="text-[var(--text-muted)] font-mono">
+                No articles found matching your criteria.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById(
+            "search-input",
+        ) as HTMLInputElement;
+        const postsContainer = document.getElementById(
+            "posts-container",
+        ) as HTMLElement;
+        const noResults = document.getElementById("no-results") as HTMLElement;
+        const postItems = document.querySelectorAll(".post-item");
+
+        const sourceButtons = document.querySelectorAll(".source-filter-btn");
+        const tagButtons = document.querySelectorAll(".tag-filter-btn");
+
+        let currentSource = "all";
+        let currentTag = "all";
+        let currentSearch = "";
+
+        function filterPosts() {
+            let visibleCount = 0;
+
+            postItems.forEach((post) => {
+                const title = post.getAttribute("data-title") || "";
+                const description = post.getAttribute("data-description") || "";
+                const tags = post.getAttribute("data-tags") || "";
+                const source = post.getAttribute("data-source") || "";
+
+                const matchesSearch =
+                    currentSearch === "" ||
+                    title.includes(currentSearch) ||
+                    description.includes(currentSearch) ||
+                    tags.includes(currentSearch);
+
+                const matchesSource =
+                    currentSource === "all" || source === currentSource;
+
+                const matchesTag =
+                    currentTag === "all" || tags.includes(currentTag);
+
+                if (matchesSearch && matchesSource && matchesTag) {
+                    (post as HTMLElement).style.display = "block";
+                    visibleCount++;
+                } else {
+                    (post as HTMLElement).style.display = "none";
+                }
+            });
+
+            if (visibleCount === 0) {
+                postsContainer?.classList.add("hidden");
+                noResults?.classList.remove("hidden");
+            } else {
+                postsContainer?.classList.remove("hidden");
+                noResults?.classList.add("hidden");
+            }
+        }
+
+        // Source Filter Listener
+        sourceButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // Update UI
+                sourceButtons.forEach((b) => {
+                    b.classList.remove(
+                        "border-[var(--accent)]",
+                        "text-[var(--accent)]",
+                        "font-bold",
+                    );
+                    b.classList.add(
+                        "text-[var(--text-muted)]",
+                        "border-transparent",
+                    );
+                });
+                btn.classList.add(
+                    "border-[var(--accent)]",
+                    "text-[var(--accent)]",
+                    "font-bold",
+                );
+                btn.classList.remove(
+                    "text-[var(--text-muted)]",
+                    "border-transparent",
+                );
+
+                currentSource = btn.getAttribute("data-source") || "all";
+                filterPosts();
+            });
+        });
+
+        // Tag Filter Listener
+        tagButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // Update UI
+                tagButtons.forEach((b) => {
+                    b.classList.remove(
+                        "bg-[var(--accent)]",
+                        "text-[var(--bg-primary)]",
+                        "border-[var(--accent)]",
+                    );
+                    b.classList.add(
+                        "text-[var(--text-muted)]",
+                        "border-[var(--border-color)]",
+                    );
+                });
+                btn.classList.add(
+                    "bg-[var(--accent)]",
+                    "text-[var(--bg-primary)]",
+                    "border-[var(--accent)]",
+                );
+                btn.classList.remove(
+                    "text-[var(--text-muted)]",
+                    "border-[var(--border-color)]",
+                );
+
+                currentTag = btn.getAttribute("data-tag") || "all";
+                filterPosts();
+            });
+        });
+
+        // Search Listener
+        searchInput?.addEventListener("input", (e) => {
+            currentSearch = (e.target as HTMLInputElement).value.toLowerCase();
+            filterPosts();
+        });
+    </script>
+</Layout>
