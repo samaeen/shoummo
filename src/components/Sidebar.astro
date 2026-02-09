@@ -241,7 +241,7 @@ const base = import.meta.env.BASE_URL;
             <ul class="space-y-4">
                 <li>
                     <a
-                        href={`${base}#about"
+                        href={`${base}#about`}
                         class="block px-4 py-2 rounded transition-all font-mono text-sm text-[var(--text-secondary)] hover:bg-[var(--border-color)] hover:text-[var(--accent)]"
                     >
                         <span class="mr-2">{">"}</span>About
@@ -249,7 +249,7 @@ const base = import.meta.env.BASE_URL;
                 </li>
                 <li>
                     <a
-                        href={`${base}#experience"
+                        href={`${base}#experience`}
                         class="block px-4 py-2 rounded transition-all font-mono text-sm text-[var(--text-secondary)] hover:bg-[var(--border-color)] hover:text-[var(--accent)]"
                     >
                         <span class="mr-2">{">"}</span>Experience
@@ -257,7 +257,7 @@ const base = import.meta.env.BASE_URL;
                 </li>
                 <li>
                     <a
-                        href={`${base}#education"
+                        href={`${base}#education`}
                         class="block px-4 py-2 rounded transition-all font-mono text-sm text-[var(--text-secondary)] hover:bg-[var(--border-color)] hover:text-[var(--accent)]"
                     >
                         <span class="mr-2">{">"}</span>Education
@@ -265,7 +265,7 @@ const base = import.meta.env.BASE_URL;
                 </li>
                 <li>
                     <a
-                        href={`${base}#skills"
+                        href={`${base}#skills`}
                         class="block px-4 py-2 rounded transition-all font-mono text-sm text-[var(--text-secondary)] hover:bg-[var(--border-color)] hover:text-[var(--accent)]"
                     >
                         <span class="mr-2">{">"}</span>Skills
@@ -273,7 +273,7 @@ const base = import.meta.env.BASE_URL;
                 </li>
                 <li>
                     <a
-                        href={`${base}#projects"
+                        href={`${base}#projects`}
                         class="block px-4 py-2 rounded transition-all font-mono text-sm text-[var(--text-secondary)] hover:bg-[var(--border-color)] hover:text-[var(--accent)]"
                     >
                         <span class="mr-2">{">"}</span>Projects
@@ -383,54 +383,69 @@ const base = import.meta.env.BASE_URL;
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("aside nav a");
 
+    // Constants for active/inactive states
+    const activeClasses = [
+        "bg-[var(--accent)]",
+        "text-[var(--bg-primary)]",
+        "font-bold",
+    ];
+    const inactiveClasses = [
+        "text-[var(--text-secondary)]",
+        "hover:bg-[var(--border-color)]",
+        "hover:text-[var(--accent)]",
+    ];
+
     // Helper to set active state
-    function setActiveLink(id: string | null) {
+    function setActiveLink(id) {
         navLinks.forEach((link) => {
             const href = link.getAttribute("href");
             // Check if it's a homepage section link
-            if (href && (href.startsWith("/#") || href.startsWith(base + "#"))) {
-                const linkId = href.includes(base) ? href.split("#")[1] : href.substring(2);
+            if (
+                href &&
+                (href.startsWith("/#") || href.startsWith(base + "#"))
+            ) {
+                const linkId = href.includes(base)
+                    ? href.split("#")[1]
+                    : href.substring(2);
                 if (linkId === id) {
-                    link.classList.add(
-                        "bg-[var(--accent)]",
-                        "text-[var(--bg-primary)]",
-                        "font-bold",
-                    );
-                    link.classList.remove(
-                        "text-[var(--text-secondary)]",
-                        "hover:bg-[var(--border-color)]",
-                        "hover:text-[var(--accent)]",
-                    );
+                    link.classList.add(...activeClasses);
+                    link.classList.remove(...inactiveClasses);
                 } else {
-                    link.classList.remove(
-                        "bg-[var(--accent)]",
-                        "text-[var(--bg-primary)]",
-                        "font-bold",
-                    );
-                    link.classList.add(
-                        "text-[var(--text-secondary)]",
-                        "hover:bg-[var(--border-color)]",
-                        "hover:text-[var(--accent)]",
-                    );
+                    link.classList.remove(...activeClasses);
+                    link.classList.add(...inactiveClasses);
                 }
-            } else if ((href === "/#about" || href === base + "#about") && id === "about") {
+            } else if (
+                (href === "/#about" || href === base + "#about") &&
+                id === "about"
+            ) {
                 // Explicit check for about since it might be the top section
-                link.classList.add(
-                    "bg-[var(--accent)]",
-                    "text-[var(--bg-primary)]",
-                    "font-bold",
-                );
-                link.classList.remove(
-                    "text-[var(--text-secondary)]",
-                    "hover:bg-[var(--border-color)]",
-                    "hover:text-[var(--accent)]",
-                );
+                link.classList.add(...activeClasses);
+                link.classList.remove(...inactiveClasses);
             }
         });
     }
 
-    // Only run on homepage
-    if (window.location.pathname === "/") {
+    // Add click listeners for immediate feedback
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            // Clear active from all first
+            navLinks.forEach((l) => {
+                const h = l.getAttribute("href");
+                if (h && (h.includes("#") || h === "/" || h.endsWith("/"))) {
+                    l.classList.remove(...activeClasses);
+                    l.classList.add(...inactiveClasses);
+                }
+            });
+            link.classList.remove(...inactiveClasses);
+            link.classList.add(...activeClasses);
+
+            // Close mobile menu on click
+            mobileSidebar?.classList.add("hidden");
+        });
+    });
+
+    // Only run observer if sections exist (homepage)
+    if (sections.length > 0) {
         const observerOptions = {
             root: null,
             rootMargin: "-20% 0px -60% 0px", // Trigger when section is near top
