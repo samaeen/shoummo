@@ -5,9 +5,9 @@ import Layout from "../layouts/Layout.astro";
 const projects = [
     {
         id: 1,
-        title: "Humanoid Robot Development",
+        title: "Campus Robotics Projects",
         description:
-            "Contributing to the development of a functional humanoid robot with zero-gravity training, walking motion, and human-interaction capabilities using ROS.",
+            "Building line follower robot, Maze solver robot, remote control robots",
         tags: ["ROS", "Python", "Robotics", "AI"],
         link: "https://github.com/samaeen",
         type: "video",
@@ -18,39 +18,23 @@ const projects = [
         title: "ERP System for Garments Industry",
         description:
             "Leading development of a comprehensive ERP system with CI/CD pipelines and automated deployment.",
-        tags: ["TypeScript", "CI/CD", "Node.js", "React"],
-        link: "https://github.com/samaeen",
+        tags: [
+            "TypeScript",
+            "CI/CD",
+            "Node.js",
+            "React",
+            "ERP",
+            "Django",
+            "PostgreSQL",
+            "Git",
+            "Jenkins",
+            "Docker",
+        ],
+        link: "https://erp.southerneleven.com/",
         type: "link",
     },
     {
         id: 3,
-        title: "Autonomous Mobile Robot (AMR)",
-        description:
-            "Designing and prototyping industrial-standard AMR using ROS for warehouse automation.",
-        tags: ["ROS", "Python", "Robotics", "Computer Vision"],
-        link: "https://github.com/samaeen",
-        type: "link",
-    },
-    {
-        id: 4,
-        title: "6-Axis Robotic Arm",
-        description:
-            "Industrial robotic arm with ROS integration for manufacturing applications.",
-        tags: ["ROS", "C++", "Robotics", "Control Systems"],
-        link: "https://github.com/samaeen",
-        type: "link",
-    },
-    {
-        id: 5,
-        title: "EMG Driven Exo-skeleton Hand",
-        description:
-            "Design and Fabrication of EMG Driven Exo-skeleton hand for rehabilitation and work assistance.",
-        tags: ["Arduino", "C", "Biomedical", "3D Printing"],
-        link: "https://www.slideshare.net/SamaEShan/design-and-fabrication-of-emg-driven-exoskeleton-hand-for-rehabilitation-process-and-work-assistance",
-        type: "link",
-    },
-    {
-        id: 6,
         title: "IoT Driver Safety Monitoring",
         description:
             "IoT and Computer Vision Based Driver Safety Monitoring System with Risk Prediction.",
@@ -59,21 +43,12 @@ const projects = [
         type: "link",
     },
     {
-        id: 7,
+        id: 4,
         title: "Brain Image Segmentation",
         description:
             "Medical image processing for brain tumor segmentation using deep learning.",
         tags: ["Python", "Machine Learning", "Computer Vision", "TensorFlow"],
         link: "https://github.com/samaeen/Brain-Image-Segementation",
-        type: "link",
-    },
-    {
-        id: 8,
-        title: "Web Development Portfolio",
-        description:
-            "Full-stack web applications using Django, Flask, and Node.js with SQL/NoSQL databases.",
-        tags: ["TypeScript", "Node.js", "React", "Python"],
-        link: "https://github.com/samaeen",
         type: "link",
     },
 ];
@@ -186,7 +161,7 @@ const allTags = [...new Set(projects.flatMap((p) => p.tags))].sort();
 
         filterTags.forEach((tag) => {
             tag.addEventListener("click", () => {
-                const selectedTag = tag.getAttribute("data-tag");
+                const selectedTag = tag.getAttribute("data-tag") || "";
 
                 // Update active state
                 filterTags.forEach((t) =>
